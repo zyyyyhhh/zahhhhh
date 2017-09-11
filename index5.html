@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		var zhangsan=[60,80,85], lisi=[50,68,656568], wangwu=[30,56,90];
+		var arr1=[zhangsan,lisi,wangwu]
+	function max1(arr1){
+			var max=arr1[0][0]
+			for(var i=0;i<arr1.length;i++){
+			for(var j=0;j<arr1[i].length;j++){
+				if(max<arr1[i][j]){
+				max=arr1[i][j]
+			}
+		}
+	}
+	console.log(max);
+	}
+	max1(arr1);
+
+
+
+	star(6);
+	function star(num){
+	for(var j=1;j<=num;j++){
+		for(i=1;i<=j;i++){
+			document.write("*");
+		}
+		document.write("<br/>")
+	}
+	}
+
+
+
+	function table(number,number1){
+	document.write('<table border=1 cellspacing=0 cellpadding=15 align=center>')
+		for(i=1;i<=number;i++){
+			document.write('<tr>')
+				for(j=1;j<=number1;j++){
+						if(j%2==0){
+							document.write('<td bgcolor=#f2f>'+i+'-'+j+'</td>')
+						}else{
+							document.write('<td bgcolor=yellow>'+i+'-'+j+'</td>')
+						}
+				}
+			document.write('</tr>')
+		}
+	document.write('</table>')
+	}
+	table(12,5);
+
+
+
+	function chengfa(number){
+	document.write('<table border=1 cellspacing=0 cellpadding=15 align=center>')
+		for(i=1;i<=number;i++){
+			document.write('<tr>')
+				if(i%2==0){
+					document.write('<tr bgcolor=red>')
+				}else{
+					document.write('<tr bgcolor=green>')
+				}
+				for(j=1;j<=i;j++){
+					document.write('<td>'+i+'×'+j+'='+i*j+'</td>')
+				}
+			document.write('</tr>')
+		}
+	document.write('</table>');
+	}
+	chengfa(9);
+
+
+
+	function sanjiao(row){
+	for(var i=1;i<=row;i++){
+		for(var j=1;j<=row-i;j++){
+			document.write('-')
+		}
+		for(var j=1;j<=2*i-1;j++){
+			document.write('*')
+		}
+		document.write('<br\>')
+	}
+	}
+	sanjiao(18);
+
+
+
+
+	function he(num){
+	var i=1;j=1;
+	for(var k=0;k<=num;){
+		k=i+j;
+		document.write(k+'&nbsp')
+		i=j;
+		j=k;
+	}
+	}
+	he(200);
+
+
+
+
+
+
+	</script>
+</body>
+</html>

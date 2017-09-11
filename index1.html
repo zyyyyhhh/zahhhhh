@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// var arr=[1,2,3,4,5,6,7,8,9]
+		// push(arr,'a','b','c')
+		// function push(arr){
+		// 	for(i=1;i<arguments.length;i++){
+		// 		arr[arr.length]=arguments[i]
+		// 	}
+		// 	console.log(arr)
+		// }
+
+
+
+	</script>
+</body>
+</html>
+
+<script>
+
+
+	/*在任意数组的后面添加任意的元素*/
+	var arr = [1,2,3,4,5,6,7]
+	function add(arr){
+		for(i=1;i<arguments.length;i++){
+			arr[arr.length]=arguments[i]
+		}console.log(arr)
+	}
+	add(arr,1,2,3,4,5)
+
+	/*function filter(arr){
+		var newnum =[]
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]%2==0){
+				newnum[newnum.length] = arr[i]
+			}
+		}console.log(newnum)
+	}
+	filter([1,2,3,4,6])*/
+
+	// 给某一段数组中的元素加上符号变成字符串
+	function join(arr,num){
+		num = num || '-';
+		var a = ''
+		for(var i=0;i<arr.length;i++){
+			if(i<arr.length-1){
+				a+=arr[i]+num
+			}else{
+				a+=arr[i]
+			}
+		}console.log(a)
+	}
+	join([0,1,2,3,4,5,6],'*')
+
+
+	/*将数组变成字符串，也就是在每个元素后添加符号，除了最后一个*/
+	function join(arr,num){
+		num=num||'-'/*添加默认值（逻辑或），还有三种方法*/
+		var newarr=[]
+		for(i=0;i<arr.length;i++){
+			if(i<arr.length-1){
+				newarr+=arr[i]+num;
+			}
+			else{
+				newarr+=arr[i]
+			}
+		}console.log(newarr)
+	}
+	join([1,2,3,4,5],'-')
+
+
+
+
+
+
+
+	/*使函数的功能更加强大，可以操作你指定的函数*/
+	function aa(num1,num2){
+		return num1+num2
+	}
+	function bb(num1,num2){
+		return num1*num2
+	}
+	function cc(num1,num2){
+		return num1*num2*num1
+	}
+	
+	function math(num1,num2,fn){
+		return fn(num1,num2)
+	}
+
+	var result = math(2,3,cc);
+	console.log(result);
+
+
+
+
+	/*在数组中筛选你所指定的元素*/
+	var arr = [1,2,3,4,5,6,7]
+	var result = filter(arr,function(value){
+		return value%2==1;
+	})
+	console.log(result);
+	function filter(arr,fn){
+		var newnum =[]
+		for(var i=0;i<arr.length;i++){
+			if(fn(arr[i])){
+				newnum[newnum.length] = arr[i]
+			}
+		}return newnum;
+	}
+
+
+
+	/*对数组中的每一个元素进行你所指定的操作*/
+	var result = map([1,2,3,4,5,6,7],function(value){
+		return value-1;
+	})
+	console.log(result)
+	function map(arr,fn){
+		var newarr=[];
+		for(var i=0;i<arr.length;i++){
+			newarr[newarr.length] = fn(arr[i])
+		}return newarr
+	}
+
+
+</script>
